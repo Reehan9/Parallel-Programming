@@ -12,7 +12,8 @@
         <li>Write an OpenMP program that divides the iterations into chunks containing 2 iterations (OMP_SCHEDULE=static,2). Output which iterations of a parallelized for loop are executed by which thread.</li>
         <li>Calculate <i>n</i> Fibonacci numbers using Parallel Directive. Eliminate the race condition using Schedule directive.</li>
         <li>Find the prime numbers from 1 to <i>n</i> using parallel for directive. Record both serial and parallel execution times.</li>
-        <li>Parallel Vector Addition: Calculate the sum of the first 100 numbers using the critical directive.</li>
+        <li>Parallel Vector Addition</li>
+        <li>Calculate the sum of the first 100 numbers using the critical directive.</li>
     </ol>
     <h2>Part B: MPI programs</h2>
     <ol>

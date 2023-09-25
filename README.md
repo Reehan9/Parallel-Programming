@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Parallel Programming Lab - ISL77</title>
 </head>
 <body>
     <h1>Parallel Programming Lab - ISL77</h1>
@@ -15,7 +14,6 @@
         <li>Find the prime numbers from 1 to <i>n</i> using parallel for directive. Record both serial and parallel execution times.</li>
         <li>Parallel Vector Addition: Calculate the sum of the first 100 numbers using the critical directive.</li>
     </ol>
-
     <h2>Part B: MPI programs</h2>
     <ol>
         <li>Implement Blocking send and receive functions.</li>
@@ -24,7 +22,6 @@
         <li>Find the factorial of a number using Broadcast and Reduce operation.</li>
         <li>Generate all prime numbers up to user input ‘n’.</li>
     </ol>
-
     <h3>Marks Distribution:</h3>
     <p>Students have to execute 2 programs.</p>
     <table border="1">

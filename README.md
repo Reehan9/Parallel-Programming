@@ -51,5 +51,15 @@
         </tbody>
     </table>
     <p><strong>Change of Program:</strong> -4 marks/part</p>
+    <h3> To Compile and Execute in Terminal:</h3>
+
+<p> Compile the program:</p>
+<pre><code class="bash">gcc &lt;your_program&gt;.c -fopenmp</code></pre>
+
+<p>This will produce an executable named <code>a.out</code>.</p>
+
+<p>To run the compiled program:</p>
+<pre><code class="bash">./a.out</code></pre>
+
 </body>
 </html>

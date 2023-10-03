@@ -12,7 +12,6 @@ int main() {
     double sum[NUM_THREADS];
     step = 1.0/(double) num_steps;
 
-    // Serial version
     clock_t start_time = clock();
     double sum_serial = 0.0;
     for(i = 0; i < num_steps; i++){
@@ -24,7 +23,6 @@ int main() {
     double serial_time = ((double) (end_time - start_time)) / CLOCKS_PER_SEC;
     printf("Serial version: pi = %6.12f, time = %f seconds\n", pi, serial_time);
 
-    // Parallel version
     start_time = clock();
     #pragma omp parallel private(i) num_threads(NUM_THREADS)
     {
@@ -40,6 +38,5 @@ int main() {
     end_time = clock();
     double parallel_time = ((double) (end_time - start_time)) / CLOCKS_PER_SEC;
     printf("Parallel version: pi = %6.12f, time = %f seconds\n", pi, parallel_time);
-
     return 0;
 }

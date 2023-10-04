@@ -67,7 +67,6 @@ int main() {
     scanf("%d", &n);
 
     int arr[n];
-    srand(time(0));  // Seed for random number generation
     for (int i = 0; i < n; i++) {
         arr[i] = rand() % 100;  // Random values between 0 and 99
     }

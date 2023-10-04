@@ -2,6 +2,8 @@
 #include <omp.h>
 
 #define NUM_STEPS 10000000  // Number of steps/iterations for the approximation
+// If segmentation fault occurs , try reducing the value of NUM_STEPS
+
 
 int main() {
     double pi = 0.0;

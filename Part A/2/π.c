@@ -1,42 +1,34 @@
 #include <stdio.h>
 #include <omp.h>
-#include <time.h>
 
-#define NUM_THREADS 8
-static long num_steps = 10000000;
-double step;
+#define NUM_STEPS 10000000  // Number of steps/iterations for the approximation
 
 int main() {
-    int i;
-    double pi;
-    double sum[NUM_THREADS];
-    step = 1.0/(double) num_steps;
+    double pi = 0.0;
 
-    clock_t start_time = clock();
-    double sum_serial = 0.0;
-    for(i = 0; i < num_steps; i++){
-        double x = (i+0.5)*step;
-        sum_serial += 4.0/(1.0+x*x);
+    // Serial computation
+    double start_time = omp_get_wtime();
+    for (int k = 0; k < NUM_STEPS; k++) {
+        pi += (4.0 * (k % 2 == 0 ? 1 : -1)) / (2 * k + 1);
     }
-    pi = sum_serial / num_steps;
-    clock_t end_time = clock();
-    double serial_time = ((double) (end_time - start_time)) / CLOCKS_PER_SEC;
-    printf("Serial version: pi = %6.12f, time = %f seconds\n", pi, serial_time);
+    double end_time = omp_get_wtime();
+    printf("Serial version: pi = %6.12f, time = %f seconds\n", pi, end_time - start_time);
 
-    start_time = clock();
-    #pragma omp parallel private(i) num_threads(NUM_THREADS)
-    {
-        int id = omp_get_thread_num();
-        for(i = id, sum[id] = 0.0; i < num_steps; i += NUM_THREADS){
-            double x = (i+0.5)*step;
-            sum[id] += 4.0/(1.0+x*x);
-        }
+    // Resetting pi for parallel computation
+    pi = 0.0;
+    
+    // Parallel computation
+    double sum[NUM_STEPS];
+    start_time = omp_get_wtime();
+    #pragma omp parallel for
+    for (int k = 0; k < NUM_STEPS; k++) {
+        sum[k] = (4.0 * (k % 2 == 0 ? 1 : -1)) / (2 * k + 1);
     }
-    for(i = 1; i < NUM_THREADS; i++) 
-        sum[0] += sum[i];
-    pi = sum[0] / num_steps;
-    end_time = clock();
-    double parallel_time = ((double) (end_time - start_time)) / CLOCKS_PER_SEC;
-    printf("Parallel version: pi = %6.12f, time = %f seconds\n", pi, parallel_time);
+    for (int k = 0; k < NUM_STEPS; k++) {
+        pi += sum[k];
+    }
+    end_time = omp_get_wtime();
+    printf("Parallel version: pi = %6.12f, time = %f seconds\n", pi, end_time - start_time);
+
     return 0;
 }

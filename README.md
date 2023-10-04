@@ -8,7 +8,9 @@
     <h2>Part A: OpenMP Programs</h2>
     <ol>
         <li>Sort an array of <i>n</i> elements using both sequential and parallel merge sort (using Section). Record the difference in execution time.</li>
-        <li>Estimate the value of pi using parallel programming. Record both serial and parallel execution times.</li>
+        <li>Estimate the value of pi using <p>
+    π = 4 ∑<sub>k=0</sub><sup>∞</sup> (-1)<sup>k</sup> / (2k + 1)
+</p> parallel programming. Record both serial and parallel execution times.</li>
         <li>Write an OpenMP program that divides the iterations into chunks containing 2 iterations (OMP_SCHEDULE=static,2). Output which iterations of a parallelized for loop are executed by which thread.</li>
         <li>Calculate <i>n</i> Fibonacci numbers using Parallel Directive. Eliminate the race condition using Schedule directive.</li>
         <li>Find the prime numbers from 1 to <i>n</i> using parallel for directive. Record both serial and parallel execution times.</li>

@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <omp.h>
-#include <time.h>
 
 void merge(int arr[], int l, int m, int r) {
     int n1 = m - l + 1;
@@ -77,17 +76,16 @@ int main() {
         parArr[i] = arr[i];
     }
 
-    clock_t start, end;
 
-    start = clock();
+    double start = omp_get_wtime();
     sequentialMergeSort(seqArr, 0, n-1);
-    end = clock();
-    printf("Time taken for sequential sort: %lf seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+    double end = omp_get_wtime();
+    printf("Time taken for sequential sort: %lf seconds\n", (end - start));
 
-    start = clock();
+    start = omp_get_wtime();
     parallelMergeSort(parArr, 0, n-1);
-    end = clock();
-    printf("Time taken for parallel sort: %lf seconds\n", ((double)(end - start)) / CLOCKS_PER_SEC);
+    end =omp_get_wtime();
+    printf("Time taken for parallel sort: %lf seconds\n", (end - start));
 
     return 0;
 }

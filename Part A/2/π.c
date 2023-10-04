@@ -9,7 +9,7 @@ int main() {
     // Serial computation
     double start_time = omp_get_wtime();
     for (int k = 0; k < NUM_STEPS; k++) {
-        pi += (4.0 * (k % 2 == 0 ? 1 : -1)) / (2 * k + 1);
+        pi += (4.0 * (k % 2 == 0 ? 1.0 : -1.0)) / (2.0 * k + 1.0);
     }
     double end_time = omp_get_wtime();
     printf("Serial version: pi = %6.12f, time = %f seconds\n", pi, end_time - start_time);
@@ -22,7 +22,7 @@ int main() {
     start_time = omp_get_wtime();
     #pragma omp parallel for
     for (int k = 0; k < NUM_STEPS; k++) {
-        sum[k] = (4.0 * (k % 2 == 0 ? 1 : -1)) / (2 * k + 1);
+        sum[k] = (4.0 * (k % 2 == 0 ? 1.0 : -1.0)) / (2.0 * k + 1.0);
     }
     for (int k = 0; k < NUM_STEPS; k++) {
         pi += sum[k];

@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <omp.h>
-#include <time.h>
 #include <stdbool.h>
 
 bool is_prime(int num) {

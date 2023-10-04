@@ -4,13 +4,14 @@
    "type": "cppbuild",
    "label": "C/C++: gcc-13 build active file",
    "command": "/opt/homebrew/bin/gcc-13",
-   "args": [
+"args": [
     "-fdiagnostics-color=always",
     "-g",
     "${file}",
     "-o",
-    "${fileDirname}/${fileBasenameNoExtension}"
-   ],
+    "${fileDirname}/${fileBasenameNoExtension}",
+    "-fopenmp"  // Add this line
+],
    "options": {
     "cwd": "${fileDirname}"
    },

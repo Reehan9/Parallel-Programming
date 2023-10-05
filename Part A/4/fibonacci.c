@@ -11,15 +11,14 @@ int main() {
     fib[0] = 0;
     fib[1] = 1;
 
-    #pragma omp parallel
-    {
+
         int i;
-        #pragma omp for schedule(dynamic)
+        #pragma omp parallel for schedule(dynamic)
         for (i = 2; i < n; i++) {
             // Calculate Fibonacci numbers in parallel.
             fib[i] = fib[i - 1] + fib[i - 2];
         }
-    }
+    
 
     // Print the Fibonacci numbers.
     printf("Fibonacci Numbers:\n");

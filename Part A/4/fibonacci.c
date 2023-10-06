@@ -15,7 +15,7 @@ int main() {
         int i;
         #pragma omp parallel for schedule(dynamic)
         for (i = 2; i < n; i++) {
-            // Calculate Fibonacci numbers in parallel.
+            #pragma omp critical
             fib[i] = fib[i - 1] + fib[i - 2];
         }
     

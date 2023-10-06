@@ -15,7 +15,6 @@ int main() {
         int i;
         #pragma omp parallel for schedule(dynamic)
         for (i = 2; i < n; i++) {
-            #pragma omp critical
             fib[i] = fib[i - 1] + fib[i - 2];
         }
     

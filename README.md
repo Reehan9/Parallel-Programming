@@ -2,14 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Parallel Programming Lab - ISL77</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
-        th { background-color: #f2f2f2; }
-        code.bash { background-color: #f4f4f4; padding: 2px; }
-    </style>
 </head>
 <body>
     <h1>Parallel Programming Lab - ISL77</h1>

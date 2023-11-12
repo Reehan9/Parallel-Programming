@@ -58,7 +58,7 @@
         </tbody>
     </table>
     <p><strong>Change of Program:</strong> -4 marks/part</p>
-    <h3>To Compile and Execute in Terminal:</h3>
+    <h3>To Compile and Execute OpenMP Programs in Terminal:</h3>
     <p>Compile the program:</p>
     <pre><code class="bash">gcc &lt;your_program&gt;.c -fopenmp</code></pre>
     <p>This will produce an executable named <code>a.out</code>.</p>

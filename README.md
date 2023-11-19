@@ -70,7 +70,7 @@
    <pre><code class="bash">mpicc &lt;your_program&gt;.c -o &lt;output_executable_name&gt;</code></pre>
    <p>This will produce an executable with the name you specify.</p>
    <p>To run the compiled MPI program:</p>
-   <pre><code class="bash">mpiexec -n &lt;number_of_processes&gt; &lt;output_executable_name&gt;</code></pre>
+   <pre><code class="bash">mpirun -n &lt;number_of_processes&gt; &lt;output_executable_name&gt;</code></pre>
    <p>Replace &lt;your_program&gt; with the name of your MPI program file, &lt;output_executable_name&gt; with the desired name for the compiled executable, and &lt;number_of_processes&gt; with the number of processes you want to use.</p>
 </body>
 </html>

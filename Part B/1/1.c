@@ -26,3 +26,5 @@ int main() {
     MPI_Finalize();
     return 0;
 }
+
+// Add Bandwidth if asked to do so , snippet code available in program 5

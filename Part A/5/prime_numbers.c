@@ -14,11 +14,10 @@ bool is_prime(int num) {
 
 int main() {
     int n = 100000;
-    int prime_count;
+    int prime_count = 0;
 
     // Serial version
     double start  = omp_get_wtime();
-    prime_count = 0;
     for (int i = 2; i <= n; i++) {
         if (is_prime(i)) {
             prime_count++;
